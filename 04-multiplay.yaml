@@ -1,0 +1,22 @@
+- name: mutiplaybook 
+  hosts: local
+  connection: local
+  tasks:
+    - name: hi from play 1 and task 1 
+      ansible.builtin.debug:
+        msg: "hi world from play 1 and task 1"
+    - name: hi from play2 and task2 
+      ansible.builtin.debug:
+        msg: "hi world from play 1 and task 2"
+      
+- name: mutiplaybook 
+  hosts: local
+  connection: local
+  tasks:
+    - name: hi from play 2 and task 1 
+      ansible.builtin.debug:
+        msg: "hi world from play 2 and task 1"
+    - name: hi from play2 and task2 
+      ansible.builtin.debug:
+        msg: "hi world from play 2 and task 2"
+      
