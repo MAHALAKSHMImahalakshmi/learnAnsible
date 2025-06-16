@@ -3,7 +3,4 @@
   tasks:
     - name: ping server
       ansible.builtin.ping:
-    - name: print message
-      ansible.builtin.debug:
-        msg: "Hello, this is a message from the playbook!" 
-
+    
