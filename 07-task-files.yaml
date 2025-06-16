@@ -1,0 +1,12 @@
+- name: run vars from importing from other files
+  hosts: local
+  connection: local
+  vars-files:
+  - course.yaml
+  tasks:
+    - name: print the files var
+      ansible.builtin.debug:
+        msg: "Course is {{ COURSE }} with duration {{ DURATION }} "
+    - name: print the greeting from files
+      ansible.builtin.debug:
+        msg: " {{  GREETING }} "
