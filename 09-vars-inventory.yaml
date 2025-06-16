@@ -3,7 +3,7 @@
   tasks:
   - name : print about the subject learnt
     ansible.builtin.debug:
-      msg: "SKILLS learnt are {{ SUBJECT1 }}, {{ SUBJECT2 }} and {{ SUBJECT3 }}"
+      msg: "SKILLS learnt are {{ SKILL1 }}, {{ SKILL2 }} and {{ SKILL3 }}"
   - name : print Greeting
     ansible.builtin.debug:
       msg: "{{ GREETING }}"
