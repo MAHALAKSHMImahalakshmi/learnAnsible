@@ -1,7 +1,7 @@
 - name: run vars from importing from other files
   hosts: local
   connection: local
-  vars-files:
+  vars_files:
   - course.yaml
   tasks:
     - name: print the files var
