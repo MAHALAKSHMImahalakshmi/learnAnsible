@@ -1,6 +1,6 @@
 - name: playvars
   hosts: local
-  connections: local
+  connection: local
   vars:
     COURSE: "ANSIBLE"
     DURATION: "10 HR"
