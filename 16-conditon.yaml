@@ -1,0 +1,5 @@
+# check os family then run as per that if redhat then dnf else debian then apt
+- name: playbook control using ansible facts
+  hosts: frontend
+  tasks:
+    - name: 

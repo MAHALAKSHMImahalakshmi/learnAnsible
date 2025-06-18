@@ -1,0 +1,11 @@
+- name : learn the condition in ansible 
+  hosts: local
+  connection: local
+  Vars:
+    number: 100
+
+  tasks:
+    - name: print the number greter than 100
+      ansible.builtin.debug:
+        msg: "the give no  {{ number }} is greater than 100"
+      when: number > 100

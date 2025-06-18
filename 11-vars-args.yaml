@@ -5,3 +5,9 @@
   - name: print skill info
     ansible.builtin.debug:
       msg: "SKILLS learnt are {{ SKILL1 }}, {{ SKILL2 }} and {{ SKILL3 }}"
+    
+
+# Mistake : I thought  it is similar to shellscript to add parameter like sudo sh abc.sh  arg1 ,arg2
+# ansible-playbook -i inventory.ini  arg1 arg2
+# ansible-playbook -i inventory.ini  -e "ARG1=arg1" -e "ARG2=arg2" -e "ARG3=arg3" [-e arguments ] it should be with double quotes
+

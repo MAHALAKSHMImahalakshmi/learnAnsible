@@ -1,0 +1,31 @@
+- name: learn aboyt the filters==functions
+  hosts: local
+  connection: local
+  vars:
+    person: "ramesh,suresh,joseph,raheem"
+  tasks:
+    - name: check undefined variable
+      ansible.builtin.debug:
+        msg: "{{ person | default('ramesh') }}"
+
+    - name: print the names
+      ansible.builtin.debug:
+        msg: {{ person | split(,) }}
+    
+    - name: dictionary to items
+      vars:
+        skill:
+          script: python
+          CI: jenkins
+      ansible.builtin.debug:
+        msg: {{ person | dict2items  }}
+
+    - name : items to dictionary
+      vars:
+        skill:
+          - {'key': 'configure-management', 'value': 'ansible'}
+          - {'key': 'ci', 'value': 'jenkins'}
+          - {'key': 'script', 'value': 'shell'}
+      ansible.builtin.debug:   
+        msg: {{ person | dict2items  }}
+

@@ -1,0 +1,11 @@
+- name: gather facts
+  hosts: local
+  connection: local
+  tasks:
+    - name: gather_facts
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts }}"
+
+# Gather facts about the target server
+# if os_family is redhat then run in dnf
+# if os_family is debian then run in apt
