@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars:
-    number: 100
+    number: 108
 
   tasks:
   - name: print the number greter than 100
