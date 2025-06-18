@@ -1,0 +1,7 @@
+- name: print  variables from arguments
+  hosts: local
+  connection: local
+  tasks:
+  - name: print skill info
+    ansible.builtin.debug:
+      msg: "SKILLS learnt are {{ SKILL1 }}, {{ SKILL2 }} and {{ SKILL3 }}"
