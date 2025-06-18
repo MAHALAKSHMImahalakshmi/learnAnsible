@@ -15,19 +15,18 @@
           
 
   tasks:
-    - name: print datatypes
-      ansible.builtin.debug:
-        msg: " DURATION: {{ DURATION }}  , LEARNER_NAME:{{ LEARNER_NAME }} ISLIVE:{{ ISLIVE }}"
+  - name: print datatypes
+    ansible.builtin.debug:
+      msg: " DURATION: {{ DURATION }}  , LEARNER_NAME:{{ LEARNER_NAME }} ISLIVE:{{ ISLIVE }}"
    
-    - name: print list
-      ansible.builtin.debug:
-        msg: " TOOLS: {{ TOOLS }}  "
+  - name: print list
+    ansible.builtin.debug:
+      msg: " TOOLS: {{ TOOLS }}  "
 
-                                        
-
-    - name: print dictionary
-      ansible.builtin.debug:
-        msg: " SKILLS: {{ SKILLS }}  "
+                                      
+  - name: print dictionary
+    ansible.builtin.debug:
+      msg: " SKILLS: {{ SKILLS }}  "
 
 
 
