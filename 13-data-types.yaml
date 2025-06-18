@@ -1,6 +1,6 @@
 - name: ansible datatypes
   hosts: local
-  connetion: local
+  connection: local
   vars:
     DURATION: 100
     LEARNER_NAME: "MAHA"
