@@ -1,7 +1,7 @@
 - name : learn the condition in ansible 
   hosts: local
   connection: local
-  Vars:
+  vars:
     number: 100
 
   tasks:
