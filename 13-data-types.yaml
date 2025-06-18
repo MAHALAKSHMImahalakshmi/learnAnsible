@@ -6,9 +6,9 @@
     LEARNER_NAME: "MAHA"
     ISLIVE: true
     TOOLS:
-      - linux
-      - shell
-      - ansible
+    - linux
+    - shell
+    - ansible
     SKILLS:
       CI: jekins
       SCRIPTING: "shell, ansible , linux"
