@@ -1,0 +1,16 @@
+plugin: amazon.aws.aws_ec2
+regions:
+- us-east-1
+keyed_groups:
+# This creates a host group for each value of the Application tag.
+- key: tags.Name #dynamic_frontend
+  prefix: "dyanmic"
+  separator: "_" # it will connect - consider underscore
+filters:
+  tag:Name: frontend
+  instance-state-name : running
+hostnames:
+  - private-ip-address
+
+compose:
+  ansible_host: private_ip_address
