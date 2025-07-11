@@ -1,0 +1,14 @@
+- name: install nginx
+  hosts: dyanamic_frontend
+  become: yes
+  tasks:
+  - name: install nginx
+    ansible.buitlin.dnf:
+      name: nginx
+      state: installed
+
+  - name: run nginx
+    ansible.buitlin.service:
+      name: nginx
+      state: started
+      enabled: yes 
