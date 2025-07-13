@@ -6,6 +6,50 @@
     - mysql
     - backend
     - frontend
+    subnet_id: subnet-0984d47e985171bd0 # networking section v  change this *****
+    sg_id: sg-0499ce052d4a6c9a2 # copy from security group section sd_id 
+    zone: srivenkata.shop
   tasks:
   - name: create ec2
-    amazon.aws.ec2_instance: 
+    amazon.aws.ec2_instance:
+      name: "{{ item }}"
+      vpc_subnet_id: "{{ subnet_id }}"
+      instance_type: t3.micro
+      security_group: "{{ sg_id }}"
+      image_id: ami-09c813fb71547fc4f # copy from Details ami_id
+      tags:
+        name: "{{ item }}"
+    loop: "{{ instances }}"
+    register: ec2_output
+# [in order store output we need to store register]
+  - name: print ec2_output
+    ansible.builtin.debug:
+      msg: "{{ ec2_output }}"
+
+  - name: create r53 records
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ item.item }}.{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address }}"
+      wait: true
+      overwrite: true
+    loop: "{{ ec2_output.results }} "
+
+  - name: create r53 records
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].public_ip_address }}"
+      wait: true
+      overwrite: true
+    loop: "{{ ec2_output.results }} "
+    when: item.item == "frontend"
+
+
+  
