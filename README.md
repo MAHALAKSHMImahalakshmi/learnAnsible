@@ -24,7 +24,7 @@ I began by understanding the **core concepts of Ansible**:
   From simple pings to complex variable management and loops.
 
 - **Inventory examples:**  
-  See how to define hosts and groups in `inventory.ini`.
+  See how to define hosts and groups in `inventory.ini` and dynamic inventory with AWS EC2 (`inventory.aws_ec2.yaml`).
 
 - **Variable usage:**  
   Explore different ways to define and override variables (play, task, file, prompt, inventory, command line).
@@ -52,8 +52,12 @@ I began by understanding the **core concepts of Ansible**:
 - `15-gather-facts.yaml` – Gathering facts and using them in plays
 - `17-loops.yaml`, `18-loops.yaml`, `19-loops.yaml` – Looping over lists and dictionaries
 - `20-function.yaml` – Using filters and functions
+- `21-user.yaml` – User management with conditional logic (check if user exists before creating)
+- `23-nginx.yaml` – Nginx installation using dynamic inventory with rolling updates (`serial: 5`)
+- `24.ec2-r53.yaml` – AWS EC2 instance creation and Route53 DNS record management
 - `course.yaml` – Example variable file
 - `inventory.ini` – Example inventory file
+- `inventory.aws_ec2.yaml` – Dynamic inventory configuration for AWS EC2 instances
 
 ---
 
@@ -76,6 +80,15 @@ I began by understanding the **core concepts of Ansible**:
 
 - **Functions & Filters:**  
   Leveraged Jinja2 filters for data manipulation ([`20-function.yaml`](20-function.yaml)).
+
+- **User Management:**  
+  Implemented conditional user creation with existence checks ([`21-user.yaml`](21-user.yaml)).
+
+- **Dynamic Inventory & Rolling Updates:**  
+  Used AWS dynamic inventory and implemented rolling updates for zero-downtime deployments ([`23-nginx.yaml`](23-nginx.yaml)).
+
+- **AWS Integration:**  
+  Created EC2 instances and managed Route53 DNS records programmatically ([`24.ec2-r53.yaml`](24.ec2-r53.yaml)).
 
 ---
 
